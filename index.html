@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="id"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Kuis Past Simple & Past Continuous</title>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f4f1ff;--card:#fff;--tx:#23214d;--mu:#6b6890;--ln:#e2ddff;--pr:#6c4bff;--co:#ff5a5f;--su:#ffc93c;--te:#14b8a6;--ok:#12a07a;--bad:#e5484d;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#15132e;--card:#211f45;--tx:#f1efff;--mu:#a9a5d6;--ln:#38346b}}
+:root[data-theme="dark"]{--bg:#15132e;--card:#211f45;--tx:#f1efff;--mu:#a9a5d6;--ln:#38346b}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--tx);font-family:Fredoka,"Segoe UI",system-ui,sans-serif;line-height:1.5}
+.wrap{max-width:720px;margin:0 auto;padding:16px}
+.card{background:var(--card);border:2px solid var(--ln);border-radius:22px;padding:22px}
+h1{font-size:clamp(28px,7vw,42px);line-height:1.1;margin:0 0 8px}
+.rb{background:linear-gradient(90deg,var(--co),var(--su),var(--te),var(--pr));-webkit-background-clip:text;background-clip:text;color:transparent}
+p{margin:0 0 12px;color:var(--mu)}
+input[type=text]{width:100%;font:inherit;font-size:18px;padding:12px 14px;border-radius:14px;border:2px solid var(--ln);background:var(--bg);color:var(--tx);margin:6px 0 14px}
+input:focus,button:focus-visible{outline:3px solid var(--su);outline-offset:2px}
+.btn{font:inherit;font-weight:600;font-size:17px;border:0;border-radius:14px;padding:12px 22px;cursor:pointer;color:#fff;background:var(--pr);box-shadow:0 4px 0 rgba(0,0,0,.18)}
+.btn.co{background:var(--co)}.btn.te{background:var(--te)}.btn.gh{background:transparent;color:var(--tx);border:2px solid var(--ln);box-shadow:none}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.row{display:flex;gap:10px;flex-wrap:wrap;justify-content:space-between;align-items:center;margin-top:16px}
+.bar{height:12px;background:var(--ln);border-radius:9px;overflow:hidden}.bar i{display:block;height:100%;background:linear-gradient(90deg,var(--co),var(--su),var(--te));transition:width .3s}
+.tag{display:inline-block;font-size:13px;font-weight:600;padding:2px 10px;border-radius:99px;background:var(--su);color:#3a2b00}
+.q{font-size:clamp(19px,4.6vw,23px);font-weight:500;margin:12px 0 16px}
+.opt{display:flex;gap:12px;width:100%;text-align:left;font:inherit;font-size:17px;color:var(--tx);background:var(--bg);border:2px solid var(--ln);border-radius:16px;padding:12px 14px;margin-bottom:10px;cursor:pointer}
+.opt b{flex:none;width:30px;height:30px;border-radius:50%;display:grid;place-items:center;background:var(--ln);font-size:15px}
+.opt.on{border-color:var(--pr);background:color-mix(in srgb,var(--pr) 14%,var(--bg))}.opt.on b{background:var(--pr);color:#fff}
+.opt.ok{border-color:var(--ok)}.opt.ok b{background:var(--ok);color:#fff}.opt.no{border-color:var(--bad)}.opt.no b{background:var(--bad);color:#fff}
+.dots{display:grid;grid-template-columns:repeat(auto-fill,minmax(34px,1fr));gap:6px;margin-top:18px}
+.dots button{font:inherit;font-size:13px;height:34px;border-radius:9px;border:2px solid var(--ln);background:transparent;color:var(--mu);cursor:pointer}
+.dots .d{background:var(--te);border-color:var(--te);color:#fff}.dots .c{outline:3px solid var(--pr)}
+.warn{color:var(--co);font-weight:600;margin-top:12px}
+.ring{width:170px;height:170px;border-radius:50%;margin:8px auto 14px;display:grid;place-items:center;background:conic-gradient(var(--c) calc(var(--p)*1%),var(--ln) 0)}
+.ring div{width:132px;height:132px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:44px;font-weight:700}
+.stat{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-bottom:10px}.stat span{padding:6px 14px;border-radius:99px;font-weight:600;background:var(--bg)}
+.rv{border-top:2px dashed var(--ln);padding:12px 0}.rv small{color:var(--mu)}
+.certwrap{container-type:inline-size;margin:18px 0}
+.cert{position:relative;aspect-ratio:1.414/1;padding:1.6cqw;border-radius:2cqw;background:conic-gradient(from 0deg,#ff5a5f,#ffc93c,#14b8a6,#3b82f6,#8b5cf6,#ec4899,#ff5a5f);color:#2a1b5e;overflow:hidden;box-shadow:0 10px 30px rgba(108,75,255,.35)}
+.ci{position:relative;height:100%;border-radius:1.2cqw;background:radial-gradient(circle at 0 0,#ffe3e6 0,transparent 30%),radial-gradient(circle at 100% 100%,#d6f7f1 0,transparent 32%),radial-gradient(circle at 100% 0,#fff2c4 0,transparent 26%),radial-gradient(circle at 0 100%,#e5dcff 0,transparent 28%),#fffdf7;text-align:center;padding:3.2cqw 6cqw;display:flex;flex-direction:column;align-items:center;justify-content:center;border:.5cqw dashed #b9a6ff;overflow:hidden}
+.ci>*{position:relative;z-index:1}.cf{position:absolute;z-index:0;border-radius:2px;opacity:.75}
+.c1{font-size:4.6cqw;font-weight:700;letter-spacing:.3cqw;background:linear-gradient(90deg,#ff5a5f,#f59e0b,#14b8a6,#6c4bff,#ec4899);-webkit-background-clip:text;background-clip:text;color:transparent}
+.c2{font-size:1.9cqw;margin:.8cqw 0 0;color:#5b4f99}
+.cn{font-family:Pacifico,cursive;font-size:6.6cqw;line-height:1.3;color:#e2367a;margin:.6cqw 0;max-width:100%;overflow-wrap:anywhere}
+.c3{font-size:1.9cqw;color:#3b3170;max-width:85%;margin:0}
+.cs{font-size:9cqw;font-weight:700;line-height:1;margin:.8cqw 0;color:#6c4bff;text-shadow:.4cqw .4cqw 0 #ffc93c}
+.cfoot{display:flex;justify-content:space-between;align-items:flex-end;width:100%;margin-top:1.6cqw;font-size:1.6cqw}
+.cfoot div{min-width:22cqw;border-top:.2cqw solid #6c4bff;padding-top:.4cqw;color:#5b4f99}
+.seal{width:12cqw;height:12cqw;border-radius:50%;display:grid;place-items:center;text-align:center;font-size:1.5cqw;font-weight:700;color:#5a3a00;background:radial-gradient(circle,#fff3b0,#ffc93c 60%,#f59e0b);border:.5cqw solid #fff;box-shadow:0 0 0 .4cqw #f59e0b,0 .6cqw 1.4cqw rgba(0,0,0,.25)}
+.seal big{display:block;font-size:4.4cqw;line-height:1}
+@media print{body *{visibility:hidden}.certwrap,.certwrap *{visibility:visible}.certwrap{position:absolute;left:0;top:0;width:100%;margin:0}@page{size:landscape;margin:0}.cert{-webkit-print-color-adjust:exact;print-color-adjust:exact;box-shadow:none}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body><div class="wrap" id="app"></div>
+<script>
+const RAW=`C1 · Mudah|Which sentence is in the Past Simple tense?|Laura was cooking dinner.|Laura cooks dinner.|Laura cooked dinner.|Laura is cooking dinner.
+C1 · Mudah|What is the past form of “buy”?|buyed|bought|buying|buys
+C1 · Mudah|Which auxiliary is commonly used to form a negative Past Simple sentence?|do|does|did|was
+C1 · Mudah|Which sentence is in the Past Continuous?|I watched TV.|I was watching TV.|I watch TV.|I have watched TV.
+C1 · Mudah|Which verb form completes the sentence: “She ___ a big breakfast yesterday.”?|have|has|had|having
+C1 · Mudah|Which form completes: “They ___ to Paris a few weeks ago.”?|go|went|were going|goes
+C2 · Mudah|Why is “yesterday” a useful time expression for Past Simple?|It refers to a completed past time.|It always describes an action happening now.|It refers only to future plans.|It describes an action that must continue.
+C2 · Mudah|What does “I was sleeping at 10 p.m.” emphasize?|A repeated habit every day.|A completed action before 10 p.m.|An action in progress at a past time.|A future action at 10 p.m.
+C2 · Sedang|Which sentence best describes the difference between the two tenses?|Past Simple describes only future actions; Past Continuous describes habits.|Past Simple often presents a completed past event; Past Continuous presents an action in progress in the past.|Both tenses always have exactly the same meaning.|Past Continuous is used only with irregular verbs.
+C2 · Sedang|In “I was cycling home when a man stepped into the road,” which action was already in progress?|stepping into the road|cycling home|stopping the bicycle|hitting the man
+C2 · Sedang|Why is “when” appropriate in “I was walking when I heard footsteps”?|It links an ongoing past action with a past event that occurred during it.|It changes the sentence into future tense.|It makes both verbs present tense.|It shows that both actions happen every day.
+C2 · Sedang|What is the most suitable interpretation of “Sam took a picture while I was not looking”?|Sam took a picture after I looked at him.|I was not looking at the time Sam took the picture.|I never looked at anything.|Sam was looking at me in the past continuously.
+C3 · Mudah|Choose the correct sentence: “Yesterday, Laura ___ work at 8.45.”|start|starts|started|was start
+C3 · Sedang|Complete: “Jenny ___ for me when I ___.”|waited / was arriving|was waiting / arrived|waited / arrived|was waited / arrive
+C3 · Sedang|Complete: “Last night I ___ a plate when I ___ the washing-up.”|dropped / was doing|was dropping / did|drop / was doing|dropped / did
+C3 · Sedang|Choose the correct question: “___ you ___ out last night?”|Did / go|Were / go|Did / went|Was / going
+C3 · Sedang|Complete: “How fast ___ you ___ when the accident ___?”|did / drive / was happening|were / driving / happened|were / drove / happened|did / driving / happened
+C3 · Sedang|Choose the correct negative sentence: “The film wasn’t very good. I ___ it much.”|didn’t enjoy|wasn’t enjoy|don’t enjoyed|didn’t enjoyed
+C4 · Sulit|A student writes: “Jenny was waiting for me when I was arrived.” What is the best correction?|Jenny waited for me when I arrived.|Jenny was waiting for me when I arrived.|Jenny was waiting for me when I was arrive.|Jenny waiting for me when I arrived.
+C4 · Sulit|Which sentence uses the two tenses most appropriately?|While I walked home, a man was stepping into the road.|I was cycling home when a man stepped into the road.|I was cycled home when a man was stepped into the road.|I cycle home when a man stepped into the road.
+C4 · Sulit|Which sentence best fits the context: “The room was quiet. Suddenly, I ___ a noise.”|was hearing|hear|heard|hearing
+C4 · Sulit|Which sentence correctly contrasts a background action and a completed event?|While we were waiting for our flights, we had a chat.|While we waited our flights, we were had a chat.|While we were waited, we had chatting.|While we waiting, we have a chat.
+C4 · Sulit|A learner says, “I was see Sue yesterday.” Which explanation is correct?|“Was see” is correct because Sue is a person.|“See” must always be followed by -ing.|For a completed event, use Past Simple: “I saw Sue yesterday.”|“Was seeing” is always required with yesterday.
+C4 · HOTS|Read: “I was walking along the street when suddenly I heard footsteps behind me. Somebody was following me.” Why is “was following” appropriate?|It presents the following as an action in progress at that time.|It presents the following as a completed one-time event.|It shows a future plan.|It changes the sentence to present tense.
+C4 · HOTS|Which sentence changes the focus most clearly from an ongoing action to a completed event?|I was studying when the phone rang.|I studied when the phone was ringing.|I was study when the phone rang.|I studying when the phone ring.
+C5 · Sulit|Which option is the best revision of “We were in a difficult position. We were trying to find a job. We didn’t know what to do” if the writer wants the first action to be a background activity and the second to be a state at that time?|We were trying to find a job, but we didn’t know what to do.|We tried finding a job, but we weren’t knew what to do.|We were tried to find a job, but we didn’t know what to do.|We trying find a job, but we don’t knew what to do.
+C5 · Sulit|Which sentence is grammatically and contextually strongest?|When I last saw Alan, he was looking for a job.|When I last was seeing Alan, he looked for a job.|When I saw last Alan, he was look for a job.|When I was saw Alan last, he was looking a job.
+C5 · Sulit|A student wants to describe a sudden interruption. Which sentence should the student choose?|I was walking home when it started to rain.|I walked home when it was starting to rain.|I was walked home when it started raining.|I walking home when rain started.
+C5 · HOTS|Which sentence gives the clearest chronological relationship?|I was cycling home when a man stepped into the road, so I managed to stop.|I was cycled home when a man was stepped into the road, so I stop.|I cycle home when a man steps into the road, so I managed stop.|I was cycling home when a man step into the road, so I was manage to stop.
+C5 · HOTS|A teacher asks students to choose the sentence that best explains why the accident happened during the activity. Which is best?|We were driving when the accident happened.|We drove when the accident was happened.|We were drove when the accident happen.|We driving when the accident was happen.
+C5 · HOTS|Which sentence is least appropriate for describing an action in progress at 10:15 yesterday morning?|I was studying at 10:15 yesterday morning.|I was reading at 10:15 yesterday morning.|I studied at 10:15 yesterday morning.|I was working at 10:15 yesterday morning.
+C6 · Sulit|Which sentence would best complete: “The doorbell rang while I ___”?|was taking a shower|take a shower|took a shower yesterday|am taking a shower
+C6 · Sulit|Create the most appropriate sentence from these ideas: “I / walk home / hear footsteps / someone follow me.”|I was walking home when I heard footsteps; someone was following me.|I walked home when I was hear footsteps; someone followed me continuously.|I was walk home when I heard footsteps; someone was follow me.|I walking home when I hear footsteps; someone was followed me.
+C6 · HOTS|Which sentence best combines a background action, an interruption, and the result?|I was carrying the bags when they felt very heavy, so I stopped.|I carried the bags when they were felt very heavy, so I was stop.|I was carry the bags when they feel very heavy, so I stopped.|I carrying the bags when they were heavy, so I stop.
+C6 · HOTS|Which option would be the best two-sentence mini-story using both Past Simple and Past Continuous correctly?|I was walking to school when it started to rain. I opened my umbrella.|I was walk to school when it was start to rain. I open my umbrella.|I walked to school when it was rain. I was opened my umbrella.|I walking to school when rain started. I was open my umbrella.
+C6 · HOTS|Which sentence best communicates that an action was in progress when another event occurred?|While I was doing the washing-up, I dropped a plate.|While I did the washing-up, I was dropped a plate.|While I was do the washing-up, I drop a plate.|While I doing the washing-up, I was drop a plate.
+C6 · HOTS|Choose the best sentence to complete a coherent account: “Last night, I ___ a plate when I ___ the washing-up. Fortunately, it ___.”|dropped / was doing / didn’t break|was dropping / did / wasn’t break|drop / was doing / didn’t broke|dropped / did / wasn’t breaking
+C6 · HOTS|Which sentence would be the best final version for a student’s narrative?|I was cycling home yesterday when a man stepped into the road. I was going quite fast, but luckily I managed to stop in time.|I cycling home yesterday when a man was step into the road. I went quite fast, but I was manage to stop.|I was cycled home yesterday when a man stepped into the road. I was go quite fast, but I managed stopping.|I was cycling home yesterday when a man step into the road. I was going quite fast, but I manage stop.`;
+const KEY="CBCBCBACBBABCBAABABBCACAAAAAAACAAAAAAA";
+const BASE=RAW.split("\n").map((l,i)=>{const p=l.split("|");return{lv:p[0],s:p[1],o:p.slice(2),a:"ABCD".indexOf(KEY[i])}});
+const N=BASE.length,PASS=80,$=id=>document.getElementById(id);
+let S={scr:"start",name:"",qs:[],ans:[],cur:0,warn:false,res:null};
+const shuf=a=>{a=a.slice();for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));[a[i],a[j]]=[a[j],a[i]]}return a};
+const esc=s=>s.replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));
+const app=$("app");
+function draw(){({start:vStart,quiz:vQuiz,result:vResult})[S.scr]();window.scrollTo(0,0)}
+function vStart(){app.innerHTML=`<div class="card"><h1 class="rb">Past Simple &amp; Past Continuous</h1>
+<p>${N} soal pilihan ganda. Jawab semua soal, lalu tekan “Kumpulkan” untuk melihat skor. Skor 80 atau lebih mendapat sertifikat.</p>
+<label for="nm" style="font-weight:600">Nama lengkap</label>
+<input type="text" id="nm" maxlength="40" placeholder="Tulis namamu" value="${esc(S.name)}" autocomplete="name">
+<button class="btn co" onclick="begin()">Mulai kuis</button><div id="er" class="warn"></div></div>`;
+$("nm").addEventListener("keydown",e=>{if(e.key==="Enter")begin()})}
+function begin(){const n=$("nm").value.trim();if(!n){$("er").textContent="Isi namamu dulu agar tercetak di sertifikat.";$("nm").focus();return}
+S.name=n;S.qs=BASE.map(q=>{const ord=shuf([0,1,2,3]);return{lv:q.lv,s:q.s,t:ord.map(i=>q.o[i]),a:ord.indexOf(q.a)}});
+S.ans=Array(N).fill(-1);S.cur=0;S.warn=false;S.scr="quiz";draw()}
+function vQuiz(){const q=S.qs[S.cur],done=S.ans.filter(x=>x>=0).length,last=S.cur===N-1;
+app.innerHTML=`<div class="card"><div class="row" style="margin:0 0 8px"><b>Soal ${S.cur+1} / ${N}</b><span class="tag">${q.lv}</span></div>
+<div class="bar"><i style="width:${done/N*100}%"></i></div>
+<div class="q">${esc(q.s)}</div>
+${q.t.map((t,i)=>`<button class="opt ${S.ans[S.cur]===i?"on":""}" onclick="pick(${i})"><b>${"ABCD"[i]}</b><span>${esc(t)}</span></button>`).join("")}
+<div class="row"><button class="btn gh" onclick="go(-1)" ${S.cur?"":"disabled"}>Sebelumnya</button>
+${last?`<button class="btn te" onclick="submit()">Kumpulkan</button>`:`<button class="btn" onclick="go(1)">Berikutnya</button>`}</div>
+${S.warn?`<div class="warn">Masih ${N-done} soal belum dijawab (ditandai abu-abu di bawah). Tekan “Kumpulkan” lagi untuk tetap mengumpulkan.</div>`:""}
+<div class="dots">${S.ans.map((a,i)=>`<button class="${a>=0?"d":""} ${i===S.cur?"c":""}" onclick="S.cur=${i};vQuiz()" aria-label="Soal ${i+1}">${i+1}</button>`).join("")}</div>
+${!last?`<div class="row"><span style="color:var(--mu)">${done} dari ${N} terjawab</span><button class="btn gh" onclick="submit()">Kumpulkan</button></div>`:""}</div>`}
+function pick(i){S.ans[S.cur]=i;S.warn=false;vQuiz()}
+function go(d){S.cur=Math.max(0,Math.min(N-1,S.cur+d));vQuiz()}
+function submit(){const left=S.ans.filter(x=>x<0).length;if(left&&!S.warn){S.warn=true;vQuiz();return}
+const ok=S.qs.filter((q,i)=>S.ans[i]===q.a).length;S.res={ok,score:Math.round(ok/N*100)};S.scr="result";draw()}
+function vResult(){const {ok,score}=S.res,pass=score>=PASS,c=pass?"var(--te)":"var(--co)";
+app.innerHTML=`<div class="card" style="text-align:center"><h1 class="rb">${pass?"Selamat, "+esc(S.name)+"!":"Tetap semangat, "+esc(S.name)+"!"}</h1>
+<div class="ring" style="--p:${score};--c:${c}"><div>${score}</div></div>
+<div class="stat"><span style="color:var(--ok)">Benar ${ok}</span><span style="color:var(--bad)">Salah ${N-ok}</span></div>
+<p>${pass?"Skormu mencapai batas 80. Sertifikatmu ada di bawah.":"Skor minimal untuk sertifikat adalah 80. Pelajari pembahasan di bawah, lalu coba lagi."}</p>
+<div class="row" style="justify-content:center"><button class="btn co" onclick="S.scr='start';draw()">Ulangi kuis</button></div></div>
+${pass?certHTML(score)+`<div class="row" style="justify-content:center;margin-top:0"><button class="btn te" onclick="try{window.print()}catch(e){alert('Gunakan screenshot untuk menyimpan sertifikat.')}">Cetak / simpan PDF</button></div>`:""}
+<div class="card" style="margin-top:18px"><h2 style="margin:0 0 6px">Pembahasan jawaban</h2>
+${S.qs.map((q,i)=>{const a=S.ans[i];return`<div class="rv"><small>Soal ${i+1} · ${q.lv}</small><div style="font-weight:500;margin:2px 0 8px">${esc(q.s)}</div>
+${q.t.map((t,j)=>`<div class="opt ${j===q.a?"ok":j===a?"no":""}" style="cursor:default;margin-bottom:6px;padding:8px 12px"><b>${"ABCD"[j]}</b><span>${esc(t)}</span></div>`).join("")}
+${a<0?`<small style="color:var(--co)">Tidak dijawab.</small>`:a===q.a?`<small style="color:var(--ok)">Jawabanmu benar.</small>`:`<small style="color:var(--bad)">Jawabanmu salah. Jawaban benar: ${"ABCD"[q.a]}.</small>`}</div>`}).join("")}</div>`}
+function certHTML(score){const d=new Date().toLocaleDateString("id-ID",{day:"numeric",month:"long",year:"numeric"}),pr=score>=90?"Excellent":"Very Good";
+const cols=["#ff5a5f","#ffc93c","#14b8a6","#6c4bff","#ec4899","#3b82f6"];
+const cf=Array.from({length:26},(_,i)=>{const sz=1+Math.random()*1.4;return`<span class="cf" style="left:${Math.random()*96}%;top:${Math.random()*94}%;width:${sz}cqw;height:${sz*(0.4+Math.random())}cqw;background:${cols[i%6]};transform:rotate(${Math.random()*180}deg)"></span>`}).join("");
+return`<div class="certwrap"><div class="cert"><div class="ci">${cf}
+<div class="c1">SERTIFIKAT PRESTASI</div><div class="c2">Certificate of Achievement</div>
+<p class="c2" style="margin-top:1.6cqw">Diberikan dengan bangga kepada</p>
+<div class="cn">${esc(S.name)}</div>
+<p class="c3">atas keberhasilannya menyelesaikan kuis <b>Past Simple &amp; Past Continuous</b> dengan skor</p>
+<div class="cs">${score}<span style="font-size:3cqw;text-shadow:none;color:#5b4f99"> / 100</span></div>
+<p class="c3">Predikat <b>${pr}</b> · Benar ${S.res.ok} dari ${N} soal</p>
+<div class="cfoot"><div>${d}</div><span class="seal"><span><big>★</big>${pr}</span></span><div>Guru Bahasa Inggris</div></div></div></div></div>`}
+draw();
+</script></body></html>
